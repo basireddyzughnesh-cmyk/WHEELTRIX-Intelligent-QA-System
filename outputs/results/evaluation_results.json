@@ -1,0 +1,207 @@
+{
+  "exact_match": 78.2,
+  "f1": 83.94,
+  "num_examples": 500,
+  "sample_predictions": [
+    {
+      "question_id": "56be4db0acb8001400a502ec",
+      "question": "Which NFL team represented the AFC at Super Bowl 50?",
+      "context_snippet": "Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated…",
+      "gold_answer": "Denver Broncos",
+      "predicted_answer": "Denver Broncos",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "confidence": 0.8603
+    },
+    {
+      "question_id": "56be4db0acb8001400a502ed",
+      "question": "Which NFL team represented the NFC at Super Bowl 50?",
+      "context_snippet": "Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated…",
+      "gold_answer": "Carolina Panthers",
+      "predicted_answer": "Carolina Panthers",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "confidence": 0.889
+    },
+    {
+      "question_id": "56be4db0acb8001400a502ee",
+      "question": "Where did Super Bowl 50 take place?",
+      "context_snippet": "Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated…",
+      "gold_answer": "Santa Clara, California",
+      "predicted_answer": "Levi's Stadium",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "confidence": 0.7867
+    },
+    {
+      "question_id": "56be4db0acb8001400a502ef",
+      "question": "Which NFL team won Super Bowl 50?",
+      "context_snippet": "Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated…",
+      "gold_answer": "Denver Broncos",
+      "predicted_answer": "Carolina Panthers",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "confidence": 0.7979
+    },
+    {
+      "question_id": "56be4db0acb8001400a502f0",
+      "question": "What color was used to emphasize the 50th anniversary of the Super Bowl?",
+      "context_snippet": "Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated…",
+      "gold_answer": "gold",
+      "predicted_answer": "gold",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "confidence": 0.8213
+    },
+    {
+      "question_id": "56be8e613aeaaa14008c90d1",
+      "question": "What was the theme of Super Bowl 50?",
+      "context_snippet": "Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated…",
+      "gold_answer": "\"golden anniversary\"",
+      "predicted_answer": "Arabic numerals",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "confidence": 0.7872
+    },
+    {
+      "question_id": "56be8e613aeaaa14008c90d2",
+      "question": "What day was the game played on?",
+      "context_snippet": "Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated…",
+      "gold_answer": "February 7, 2016",
+      "predicted_answer": "February 7, 2016",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "confidence": 0.854
+    },
+    {
+      "question_id": "56be8e613aeaaa14008c90d3",
+      "question": "What is the AFC short for?",
+      "context_snippet": "Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated…",
+      "gold_answer": "American Football Conference",
+      "predicted_answer": "American Football Conference",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "confidence": 0.8467
+    },
+    {
+      "question_id": "56bea9923aeaaa14008c91b9",
+      "question": "What was the theme of Super Bowl 50?",
+      "context_snippet": "Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated…",
+      "gold_answer": "\"golden anniversary\"",
+      "predicted_answer": "Arabic numerals",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "confidence": 0.7872
+    },
+    {
+      "question_id": "56bea9923aeaaa14008c91ba",
+      "question": "What does AFC stand for?",
+      "context_snippet": "Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated…",
+      "gold_answer": "American Football Conference",
+      "predicted_answer": "American Football Conference",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "confidence": 0.862
+    },
+    {
+      "question_id": "56bea9923aeaaa14008c91bb",
+      "question": "What day was the Super Bowl played on?",
+      "context_snippet": "Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated…",
+      "gold_answer": "February 7, 2016",
+      "predicted_answer": "February 7, 2016",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "confidence": 0.8397
+    },
+    {
+      "question_id": "56beace93aeaaa14008c91df",
+      "question": "Who won Super Bowl 50?",
+      "context_snippet": "Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated…",
+      "gold_answer": "Denver Broncos",
+      "predicted_answer": "Denver Broncos",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "confidence": 0.8353
+    },
+    {
+      "question_id": "56beace93aeaaa14008c91e0",
+      "question": "What venue did Super Bowl 50 take place in?",
+      "context_snippet": "Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated…",
+      "gold_answer": "Levi's Stadium",
+      "predicted_answer": "Levi's Stadium",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "confidence": 0.8238
+    },
+    {
+      "question_id": "56beace93aeaaa14008c91e1",
+      "question": "What city did Super Bowl 50 take place in?",
+      "context_snippet": "Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated…",
+      "gold_answer": "Santa Clara",
+      "predicted_answer": "Santa Clara",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "confidence": 0.7422
+    },
+    {
+      "question_id": "56beace93aeaaa14008c91e2",
+      "question": "If Roman numerals were used, what would Super Bowl 50 have been called?",
+      "context_snippet": "Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated…",
+      "gold_answer": "Super Bowl L",
+      "predicted_answer": "Super Bowl L",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "confidence": 0.9103
+    },
+    {
+      "question_id": "56beace93aeaaa14008c91e3",
+      "question": "Super Bowl 50 decided the NFL champion for what season?",
+      "context_snippet": "Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated…",
+      "gold_answer": "2015",
+      "predicted_answer": "2015",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "confidence": 0.8433
+    },
+    {
+      "question_id": "56bf10f43aeaaa14008c94fd",
+      "question": "What year did the Denver Broncos secure a Super Bowl title for the third time?",
+      "context_snippet": "Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated…",
+      "gold_answer": "2015",
+      "predicted_answer": "2016",
+      "exact_match": 0,
+      "f1_score": 0.0,
+      "confidence": 0.7958
+    },
+    {
+      "question_id": "56bf10f43aeaaa14008c94fe",
+      "question": "What city did Super Bowl 50 take place in?",
+      "context_snippet": "Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated…",
+      "gold_answer": "Santa Clara",
+      "predicted_answer": "Santa Clara",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "confidence": 0.7422
+    },
+    {
+      "question_id": "56bf10f43aeaaa14008c94ff",
+      "question": "What stadium did Super Bowl 50 take place in?",
+      "context_snippet": "Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated…",
+      "gold_answer": "Levi's Stadium",
+      "predicted_answer": "Levi's Stadium",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "confidence": 0.8057
+    },
+    {
+      "question_id": "56bf10f43aeaaa14008c9500",
+      "question": "What was the final score of Super Bowl 50?",
+      "context_snippet": "Super Bowl 50 was an American football game to determine the champion of the National Football League (NFL) for the 2015 season. The American Football Conference (AFC) champion Denver Broncos defeated…",
+      "gold_answer": "24–10",
+      "predicted_answer": "24–10",
+      "exact_match": 1,
+      "f1_score": 1.0,
+      "confidence": 0.6758
+    }
+  ]
+}
