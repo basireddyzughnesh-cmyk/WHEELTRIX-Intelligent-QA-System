@@ -1,0 +1,259 @@
+================================================================================
+        INTELLIGENT USER QUESTION ANSWERING SYSTEM - PROJECT STRUCTURE
+================================================================================
+
+NEW STRUCTURE (Frontend/Backend Separation):
+
+User_Question_Answering_System/
+│
+├── 📁 frontend/                    ← UI LAYER (Presentation)
+│   ├── __init__.py
+│   ├── app.py                      ← ENTRY POINT (run: streamlit run frontend/app.py)
+│   │   └── Sets up Streamlit config
+│   │   └── Orchestrates UI rendering
+│   │   └── Calls backend services
+│   │
+│   ├── components.py               ← UI COMPONENTS
+│   │   ├── render_sidebar()        - Settings, project info
+│   │   ├── render_examples()       - Example Q&A pairs
+│   │   ├── render_technology_stack() - Tech stack table
+│   │   └── render_how_it_works()   - Pipeline explanation
+│   │
+│   └── styles.py                   ← STYLING
+│       ├── render_css()            - Custom CSS styles
+│       ├── render_header()         - App header banner
+│       └── render_footer()         - App footer
+│
+├── 📁 backend/                     ← BUSINESS LOGIC LAYER (ML/Services)
+│   ├── __init__.py
+│   │
+│   ├── model.py                    ← ML MODEL WRAPPER
+│   │   └── QAModel class
+│   │       ├── load_pretrained()   - Load from Hugging Face
+│   │       ├── load_local()        - Load saved checkpoint
+│   │       ├── save()              - Save model/tokenizer
+│   │       └── predict()           - Run inference
+│   │
+│   └── qa_service.py               ← SERVICE LAYER
+│       ├── validate_question_input() - Input validation
+│       ├── load_qa_model()         - Model initialization
+│       └── run_prediction()        - Prediction orchestration
+│
+├── 📁 data/                        ← DATASETS
+│   ├── raw/                        - Downloaded SQuAD JSON files
+│   └── processed/                  - Preprocessed CSV files
+│
+├── 📁 models/                      ← SAVED CHECKPOINTS
+│   └── (model weights saved here)
+│
+├── 📁 notebooks/                   ← JUPYTER EXPLORATION
+│   └── user_question_answering_analysis.ipynb
+│
+├── 📁 outputs/                     ← RESULTS
+│   ├── figures/                    - EDA charts
+│   ├── results/                    - Evaluation metrics
+│   └── screenshots/                - App screenshots
+│
+├── 📁 app/                         ← LEGACY (deprecated)
+│   └── app.py                      - Old monolithic entry point
+│
+├── 📁 src/                         ← LEGACY (deprecated)
+│   ├── model.py                    - Original model code
+│   ├── qa_service.py               - Original service code
+│   └── (other utilities)
+│
+├── ARCHITECTURE.md                 ← THIS FILE (architecture documentation)
+├── PROJECT_STRUCTURE.txt           ← FOLDER LAYOUT (this file)
+├── requirements.txt                ← Python dependencies
+└── README.md                       ← Project overview
+
+
+================================================================================
+                            DATA FLOW DIAGRAM
+================================================================================
+
+                    ┌─────────────────────────┐
+                    │  STREAMLIT UI (frontend)│
+                    │   - Input fields        │
+                    │   - Result display      │
+                    └──────────────┬──────────┘
+                                   │
+                                   ▼
+                    ┌─────────────────────────┐
+                    │  Components (frontend)  │
+                    │   - Examples            │
+                    │   - Sidebar             │
+                    │   - Styling             │
+                    └──────────────┬──────────┘
+                                   │
+                                   ▼
+                    ┌─────────────────────────┐
+                    │   validate_input()      │ ← backend/qa_service.py
+                    │   ├─ Check context      │
+                    │   └─ Check question     │
+                    └──────────────┬──────────┘
+                                   │
+                                   ▼
+                    ┌─────────────────────────┐
+                    │  run_prediction()       │ ← backend/qa_service.py
+                    │   ├─ Time measurement   │
+                    │   └─ Call model.predict │
+                    └──────────────┬──────────┘
+                                   │
+                                   ▼
+                    ┌─────────────────────────┐
+                    │  QAModel.predict()      │ ← backend/model.py
+                    │   ├─ Tokenization       │
+                    │   ├─ Model inference    │
+                    │   └─ Answer extraction  │
+                    └──────────────┬──────────┘
+                                   │
+                                   ▼
+                    ┌─────────────────────────┐
+                    │  Result Dictionary      │
+                    │   ├─ answer             │
+                    │   ├─ score (confidence) │
+                    │   └─ elapsed_time       │
+                    └──────────────┬──────────┘
+                                   │
+                                   ▼
+                    ┌─────────────────────────┐
+                    │  Display Result (UI)    │
+                    │   ├─ Answer box         │
+                    │   ├─ Confidence %       │
+                    │   └─ Highlighted answer │
+                    └─────────────────────────┘
+
+
+================================================================================
+                        MODULE DEPENDENCIES
+================================================================================
+
+frontend/app.py
+  ├─ imports: frontend/components.py
+  ├─ imports: frontend/styles.py
+  └─ imports: backend/qa_service.py
+             └─ imports: backend/model.py
+
+frontend/components.py
+  └─ imports: pandas (for dataframe display)
+
+frontend/styles.py
+  └─ imports: streamlit
+
+backend/qa_service.py
+  ├─ imports: time
+  └─ imports: backend/model.py
+
+backend/model.py
+  ├─ imports: logging, pathlib
+  ├─ imports: torch, transformers
+  ├─ imports: numpy (for inference)
+  └─ imports: logging
+
+
+================================================================================
+                    RUNNING THE APPLICATION
+================================================================================
+
+Development:
+    streamlit run frontend/app.py
+
+Production:
+    streamlit run frontend/app.py --server.port 8501 --server.address 0.0.0.0
+
+Legacy (deprecated):
+    streamlit run app/app.py
+
+
+================================================================================
+                        FILE STATISTICS
+================================================================================
+
+frontend/
+  ├── app.py                    ~5.2 KB (main entry point)
+  ├── components.py             ~6.4 KB (UI components)
+  ├── styles.py                 ~3.0 KB (styling)
+  └── __init__.py               <1 KB
+
+backend/
+  ├── model.py                  ~9.3 KB (ML model wrapper)
+  ├── qa_service.py             ~1.6 KB (service layer)
+  └── __init__.py               <1 KB
+
+Total new structure: ~26 KB (clean, modular, maintainable)
+
+
+================================================================================
+                        BENEFITS OF THIS STRUCTURE
+================================================================================
+
+✅ SEPARATION OF CONCERNS
+   - Frontend handles UI/UX only
+   - Backend handles ML/business logic
+   - Easy to understand, modify, test
+
+✅ SCALABILITY
+   - Add new UI components without touching backend
+   - Add new services without touching UI
+   - Can swap Streamlit for FastAPI, Django, etc.
+
+✅ REUSABILITY
+   - Backend services can be used by:
+     * Streamlit app (current)
+     * REST API
+     * CLI tools
+     * Batch processing scripts
+
+✅ TESTABILITY
+   - Backend can be unit tested independently
+   - Frontend can be tested with component tests
+   - No need to run Streamlit server for backend tests
+
+✅ MAINTAINABILITY
+   - Clear folder structure
+   - Single responsibility per module
+   - Easy to locate and fix bugs
+   - Self-documenting code organization
+
+✅ DEPLOYMENT FLEXIBILITY
+   - Can deploy frontend and backend separately
+   - Can run on different servers
+   - Easier containerization and CI/CD
+
+
+================================================================================
+                        NEXT STEPS (OPTIONAL)
+================================================================================
+
+1. Add REST API (FastAPI)
+   backend/
+   ├── api.py                     ← FastAPI app
+   └── routes/                    ← API endpoints
+       ├── qa.py                  ← Question answering endpoints
+       └── health.py              ← Health check
+
+2. Add CLI Tool
+   backend/
+   └── cli.py                     ← Command-line interface
+
+3. Add Caching
+   backend/
+   └── cache.py                   ← Prediction caching (Redis/LRU)
+
+4. Add Logging & Monitoring
+   backend/
+   └── logger.py                  ← Centralized logging
+   └── metrics.py                 ← Performance metrics
+
+5. Add Tests
+   backend/
+   └── tests/
+       ├── test_model.py
+       └── test_qa_service.py
+   frontend/
+   └── tests/
+       ├── test_components.py
+       └── test_app.py
+
+================================================================================
